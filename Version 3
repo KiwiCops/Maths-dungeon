@@ -1,0 +1,55 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using UnityEngine;
+
+public class Platformer : MonoBehaviour
+
+{
+    // Start is called before the first frame update
+
+    Rigidbody2D rb;
+    public float moveBy;
+    public float speed;
+    public float Sprintspeed;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        Move();
+        sprint();
+        sprintbackwards();
+    }
+
+    void Move()
+        //Move left or right
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        float moveBy = x * speed;
+        rb.velocity = new Vector2(moveBy, rb.velocity.y);
+    }
+    //Lets you Sprint to the right
+    void sprint()
+    {
+            if (Input.GetKey(KeyCode.X))
+            {
+                rb.velocity = new Vector2(moveBy*2, rb.velocity.y);
+            }
+
+    }
+    //Lets you Sprint to the left
+    void sprintbackwards()
+    {
+        if (Input.GetKey(KeyCode.Z))
+        {
+            rb.velocity = new Vector2(moveBy *-2, rb.velocity.y);
+        }
+
+    }
+}
