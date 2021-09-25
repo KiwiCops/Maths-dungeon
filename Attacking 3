@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Workout : MonoBehaviour { }
+
+
+{
+    void Update() {
+
+        maths();
+    }
+
+    //If 36 is imputed into the imput feild the question is right if not it is wrong 
+    void maths()
+    {
+        if (inputfield.text == "36")
+        {
+            Correct = new Vector2(0, 15);
+        }
+        else {
+
+            wrong = new Vector2(0, 15);
+        }
+    }
+
+}
