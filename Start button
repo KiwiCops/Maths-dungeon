@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//This loads the Gameplay scene
 public class Change : MonoBehaviour
 {
     public void change()
